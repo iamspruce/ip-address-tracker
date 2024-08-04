@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="wrapper center">
+        <h1 class="header_title">IP Address Tracker</h1>
+        <form class="header_form">
+          <input
+            type="text"
+            id="search"
+            placeholder="Search for any IP address or domain"
+          />
+          <button>
+            <img
+              src="https://raw.githubusercontent.com/iamspruce/temp-intro-to-api/c4d6abdcc73f63cf24a6b02fa37be5ee1b6d122e/icon-arrow.svg"
+              alt=""
+              srcset=""
+            />
+          </button>
+        </form>
+        <div class="header_desc">
+          <div>
+            <p>IP Address</p>
+            <p class="large_text">
+              <span class="address"> </span>
+            </p>
+          </div>
+          <div>
+            <p>Location</p>
+            <p class="large_text">
+              <span class="location"></span>
+            </p>
+          </div>
+          <div>
+            <p>Timezone</p>
+            <p class="large_text"><span class="utc"></span></p>
+          </div>
+          <div>
+            <p>ISP</p>
+            <p class="large_text">
+              <span class="isp"></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <footer class="footer">
+      <div class="map" id="map"></div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

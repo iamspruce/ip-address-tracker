@@ -1,0 +1,250 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+:root {
+  --mg-large: -3.5rem;
+  --shadow-color: 0deg 0% 55%;
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    1.5px 2.9px 3.7px -0.4px hsl(var(--shadow-color) / 0.34),
+    2.7px 5.4px 6.8px -0.7px hsl(var(--shadow-color) / 0.34),
+    4.5px 8.9px 11.2px -1.1px hsl(var(--shadow-color) / 0.34),
+    7.1px 14.3px 18px -1.4px hsl(var(--shadow-color) / 0.34),
+    11.2px 22.3px 28.1px -1.8px hsl(var(--shadow-color) / 0.34),
+    17px 33.9px 42.7px -2.1px hsl(var(--shadow-color) / 0.34),
+    25px 50px 62.9px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34),
+    0.4px 0.8px 1px -1.2px hsl(var(--shadow-color) / 0.34),
+    1px 2px 2.5px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+h1 {
+  font-size: 1.6rem;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* utils */
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95vw;
+  max-width: 1024px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.large_text {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+/* Header CSS */
+
+.header {
+  z-index: 999;
+  text-align: center;
+  background-image: url("https://raw.githubusercontent.com/iamspruce/temp-intro-to-api/main/pattern-bg-desktop.png");
+  background-size: cover;
+}
+
+.header .wrapper {
+  padding-bottom: 8.5rem;
+  position: relative;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 770px) {
+  .header {
+    background-image: url("https://raw.githubusercontent.com/iamspruce/temp-intro-to-api/main/pattern-bg-mobile.png");
+    background-size: cover;
+  }
+}
+
+.header_title {
+  margin-top: 16px;
+  color: white;
+}
+
+.header_form {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+.header_form input,
+.header_form button {
+  border: 0px;
+  padding: 10px 20px;
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.header_form input {
+  width: 100%;
+  border-top-left-radius: 11px;
+  border-bottom-left-radius: 11px;
+}
+
+.header_form button {
+  background-color: #000;
+  border-top-right-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+
+.header_desc {
+  position: absolute;
+  bottom: -30%;
+  z-index: 999;
+  box-shadow: var(--shadow-elevation-high);
+  text-align: left;
+  background-color: white;
+  border-radius: 11px;
+  padding: 32px 16px;
+}
+@media (max-width: 969px) {
+  .header_desc {
+    bottom: -40%;
+  }
+}
+@media (max-width: 770px) {
+  .header_desc {
+    bottom: -55%;
+  }
+}
+@media (max-width: 370px) {
+  .header_desc {
+    bottom: -65%;
+  }
+}
+.header_desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+@media (max-width: 770px) {
+  .header_desc {
+    padding: 12px 12px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media (min-width: 770px) {
+  .header_desc div:not(:last-child) {
+    border-right: 1px solid #eed;
+  }
+}
+
+.header_desc div {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+@media (max-width: 770px) {
+  .header_desc div {
+    padding: 6px 2px;
+  }
+}
+.header_desc div p:first-child {
+  font-size: small;
+  color: #333;
+}
+
+.header_desc .large_text {
+  font-size: x-large;
+  color: #000;
+  margin-top: 12px;
+}
+@media (max-width: 770px) {
+  .header_desc .large_text {
+    font-size: 16px;
+    color: #000;
+    margin-top: 2px;
+  }
+}
+
+.footer {
+  height: 100vh;
+  width: 100vw;
+}
+
+.footer .map {
+  height: 100%;
+}
